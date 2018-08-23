@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  pokedex
+//  Pokedex
 //
-//  Created by Samuel Chavez on 23/08/18.
+//  Created by Samuel Chavez on 01/02/18.
 //  Copyright © 2018 Samuel Chavez. All rights reserved.
 //
 
