@@ -6,97 +6,30 @@
 //  Copyright © 2018 Samuel Chavez. All rights reserved.
 //
 
-
-class Pokemon {
+struct Pokemon {
+    var name: String
+    var pokedexId: Int
+    var description: String?
+    var type: String?
+    var defense: String?
+    var height: String?
+    var weight: String?
+    var attack: String?
+    var nextEvolutionTxt2: String?
+    var nextEvolutionTxt3: String?
+    var evoImageID2: String?
+    var evoImageID3: String?
+    var pokemonURL: String
     
-    private var _name : String!
-    private var _pokedexId : Int!
-    private var _description : String!
-    private var _type : String!
-    private var _defense : String!
-    private var _height : String!
-    private var _weight : String!
-    private var _attack : String!
-    private var _nextEvolutionTxt2 : String!
-    private var _nextEvolutionTxt3 : String!
-    private var _evoImageID2 : String!
-    private var _evoImageID3 : String!
-    
-    private var _pokemonURL : String!
-    
-    var name : String {
-        return _name
-    }
-    
-    var pokedexInt : Int {
-        return _pokedexId
-    }
-    
-    var description : String {
-        if _description == nil {
-            _description = ""
-        }
-        return _description
-    }
-    
-    var type : String {
-        if _type == nil {
-            _type = ""
-        }
-        return _type
-    }
-    
-    var defense : String {
-        if _defense == nil {
-            _defense = ""
-        }
-        return _defense
-    }
-    
-    var height : String {
-        if _height == nil {
-            _height = ""
-        }
-        return _height
-    }
-    
-    
-    var weight : String {
-        if _weight == nil {
-            _weight = ""
-        }
-        return _weight
-    }
-    
-    var attack : String {
-        if _attack == nil {
-            _attack = ""
-        }
-        return _attack
-    }
-    
-    var nextEvolutionTxt2 : String {
-        if _nextEvolutionTxt2 == nil {
-            _nextEvolutionTxt2 = ""
-        }
-        return _nextEvolutionTxt2
-    }
-    
-    var nextEvolutionTxt3 : String {
-        if _nextEvolutionTxt3 == nil {
-            _nextEvolutionTxt3 = ""
-        }
-        return _nextEvolutionTxt3
-    }
     
     init(name: String, pokedexId: Int){
-        self._name = name
-        self._pokedexId = pokedexId
-        self._pokemonURL = "\(URL_BASE)\(URL_POKEMON)\(pokedexId)/"
+        self.name = name
+        self.pokedexId = pokedexId
+        self.pokemonURL = "\(URL_BASE)\(URL_POKEMON)\(pokedexId)/"
     }
     
-    func downloadPokemonDetails(completed: @escaping DownloadComplete) {
-        completed()
+//    func downloadPokemonDetails(completed: @escaping DownloadComplete) {
+//        completed()
 //        AF.request(_pokemonURL).responseJSON { (response) in
 //            print("pokemon request ", self._pokemonURL)
 //            print("pokemon response ", response.value ?? response.error ?? "No value")
@@ -362,7 +295,5 @@ class Pokemon {
 //            completed()
 //            
 //        } //end func download poke malarky
-        
-    }
-    
+//    }
 }

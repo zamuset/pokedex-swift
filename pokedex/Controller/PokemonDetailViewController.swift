@@ -32,16 +32,15 @@ class PokemonDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let image =  UIImage(named: "\(pokemon.pokedexInt)")
-        let imageNextEvo =  UIImage(named: "\(pokemon.pokedexInt + 1)")
+        let image =  UIImage(named: "\(pokemon.pokedexId)")
+        let imageNextEvo =  UIImage(named: "\(pokemon.pokedexId + 1)")
         mainImage.image = image
         currEvoImg.image = image
         nextEvoImg.image = imageNextEvo
         
-        pokemon.downloadPokemonDetails {
-            self.updateUI()
-        }
-        
+//        pokemon.downloadPokemonDetails {
+//            self.updateUI()
+//        }
     }
     
     func updateUI(){
@@ -51,17 +50,15 @@ class PokemonDetailViewController: UIViewController {
         defenseLbl.text = pokemon.defense
         
         heightLbl.text = pokemon.height
-        pokedexLbl.text = "\(pokemon.pokedexInt)"
+        pokedexLbl.text = "\(pokemon.pokedexId)"
         weightLbl.text = pokemon.weight
         attackLbl.text = pokemon.attack
         
         evoLbl.text = pokemon.nextEvolutionTxt3
-        print(pokemon.nextEvolutionTxt3)
         
     }
 
     @IBAction func backButtonPressed(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
-    
 }
